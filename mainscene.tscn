@@ -1,3 +1,38 @@
-[gd_scene format=3 uid="uid://b8guqlvjt3tjj"]
+[gd_scene load_steps=7 format=3 uid="uid://b8guqlvjt3tjj"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" uid="uid://dglmv4di3ufjj" path="res://mainscene.gd" id="1_5lfti"]
+[ext_resource type="Texture2D" uid="uid://dh0tiv8teqphm" path="res://ex_image/vovo1.png" id="1_xtb1e"]
+[ext_resource type="Texture2D" uid="uid://dcu5m8y4kpb24" path="res://ex_image/vovo2.png" id="2_dn5c8"]
+[ext_resource type="Script" uid="uid://8u8hhswwe3vi" path="res://animated_sprite_2d.gd" id="4_sbvtr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5lfti"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xtb1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dn5c8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sbvtr"]
+radius = 75.0
+height = 210.0
+
+[node name="Player" type="Area2D"]
+position = Vector2(571, 332)
+script = ExtResource("1_5lfti")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_5lfti")
+frame_progress = 0.731512
+script = ExtResource("4_sbvtr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 23)
+shape = SubResource("CapsuleShape2D_sbvtr")
