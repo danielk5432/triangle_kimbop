@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3ulcnf3u8ynd"]
+
+[ext_resource type="Script" uid="uid://byj4cxpwxdhv2" path="res://script/card/card_custom.gd" id="1_7wvdc"]
+[ext_resource type="Texture2D" uid="uid://cmyq1anj4cbbr" path="res://icon.svg" id="2_xw1wj"]
+[ext_resource type="Script" uid="uid://bxc3np2pqu1gb" path="res://addons/simple_cards/resources/effect_resource.gd" id="3_owlf7"]
+[ext_resource type="Script" uid="uid://6h70gh0ms0mh" path="res://addons/simple_cards/resources/card_resource.gd" id="4_ewso1"]
+[ext_resource type="Texture2D" uid="uid://4nt807rqqcr4" path="res://resource/sample_card.png" id="5_w6npp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sib02"]
+
+[sub_resource type="Resource" id="Resource_hyxxc"]
+script = ExtResource("4_ewso1")
+card_face = ExtResource("2_xw1wj")
+card_back = SubResource("CompressedTexture2D_sib02")
+card_description = ""
+effects = Array[ExtResource("3_owlf7")]([])
+metadata/_custom_type_script = "uid://6h70gh0ms0mh"
+
+[node name="Card" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_7wvdc")
+move_pos = Vector2(0, -30)
+card_resource = SubResource("Resource_hyxxc")
+start_face = "Face"
+flip_duration = 0.0
+metadata/_custom_type_script = "uid://w56wwhxkbnke"
+
+[node name="Sample" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_w6npp")
