@@ -15,14 +15,11 @@ func _input(event):
 		isattack = true
 		play("attack")
 	
-
 func _on_animation_finished() -> void:
 	if animation == "attack":
 		isattack = false
 		isbutton = false
 		
-
-
 
 func _on_button_pressed() -> void:
 	isbutton = true
