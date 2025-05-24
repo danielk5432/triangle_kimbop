@@ -20,6 +20,7 @@ var hand_data : Array[CardData]
 var hand_cards : Array[BaseCard]
 var selected_cards : Array[BaseCard]
 var card_idx : int = 0
+var result : Result
 
 func _ready():
 	change_state(BattleState.SETUP)
@@ -36,6 +37,8 @@ func change_state(new_state: BattleState):
 		BattleState.SETUP:
 			deck = Global.get_deck()
 			deck.shuffle()
+			for rcard in deck:
+				rcard.round_reset()
 			change_state(BattleState.DRAW)
 		BattleState.DRAW:
 			if len(hand_data) == 0:
@@ -51,16 +54,24 @@ func change_state(new_state: BattleState):
 			Global.selectable = true
 
 		BattleState.CARD:
-			print(hand_cards)
-			print(selected_cards)
-			if len(selected_cards) <= card_idx:
-				change_state(BattleState.ENEMY)
-				
-			change_state(BattleState.BREAK)
-		BattleState.BREAK:
-			#resolve_card_destruction()
-			pass
-
+			result = Result.new()
+			var break_card = []
+			var passive : Array[Passive] = [] # 아이템 추
+			for card_idx in range(selected_cards.size()):
+				if selected_cards[card_idx].run(passive, result, selected_cards):
+					break_card.append(true)
+				else:
+					break_card.append(false)
+			while result.repeat:
+				for card_idx in range(selected_cards.size()):
+					# 확률 조정 카드 제외
+					# 깨진 카드 다시 발동 금지
+					if selected_cards[card_idx].run(passive, result, selected_cards):
+						break_card.append(true)
+					else:
+						break_card.append(false)
+			print(result.damage, break_card)
+			change_state(BattleState.ENEMY)
 		BattleState.ENEMY:
 			#enemy_turn()
 			pass
@@ -119,11 +130,10 @@ func _on_button_pressed():
 	if current_state == BattleState.SELECT:
 		del_selected_in_hand()
 		arrange_cards(hand_cards, 500)
-		arrange_cards(selected_cards, 1300/4, 350/2)
+		arrange_cards(selected_cards, 300, 350/2)
 		change_state(BattleState.CARD)
 
 func del_selected_in_hand():
-	var del_cards = []
 	var length = hand_cards.size()
 	for i in range(length):
 		var curr_card = hand_cards[length - i - 1]

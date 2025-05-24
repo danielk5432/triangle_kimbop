@@ -28,3 +28,14 @@ func _card_deselected():
 
 func select_reset():
 	$Card.deselect()
+
+func run(p_list : Array[Passive] , result : Result, c_list : Array[BaseCard]):
+	var r = 0
+	for card in c_list:
+		if card.card_data.name == card_data.name:
+			r += 1
+	result.damage += card_data.damage
+	# check_passive()
+	if randf() < card_data.break_chance + Global.resonance_list[r]: # passive 
+		return true
+	return false

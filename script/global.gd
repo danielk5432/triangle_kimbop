@@ -5,6 +5,7 @@ var player_deck: Array[CardData] = []
 var hand_card_limit = 12
 var initial_draw = 8
 var draw_card = 4
+var resonance_list = [0.0, 0.0, 20.0, 40.0, 60.0, 80.0]
 
 var id = 0
 
@@ -13,7 +14,7 @@ var selectable = false
 func get_deck() -> Array:
 	if len(player_deck) < 5:
 		for i in range(5):
-			player_deck.append(FireballData.new())
+			player_deck.append(FireballData.new(1))
 	return player_deck
 
 func make_card(data : CardData) -> BaseCard:

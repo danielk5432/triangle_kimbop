@@ -10,7 +10,7 @@ extends Resource
 @export var damage: float = 0.0
 @export var damage_growth: float = 0.0
 @export var multiplier: float = 1.0
-@export var multiplier_growth: float = 1.0
+@export var multiplier_growth: float = 0.0
 @export var shield: int = 0
 @export var shield_growth: int = 0
 
@@ -24,10 +24,22 @@ extends Resource
 
 # 작동 조건 / 변형 수치
 @export var repeat_bonus: float = 0.0       # 연타: n에 따라 증가
+@export var repeat_bonus_growth: float = 0.0       # 연타: n에 따라 증가
+@export var break_mult: float = 0.0       # 연타: n에 따라 증가
+@export var break_mult_growth: float = 0.0       # 연타: n에 따라 증가
 @export var resonance_bonus: float = 0.0    # 공명 시 강화
+@export var resonance_bonus_growth: float = 0.0    # 공명 시 강화
 @export var on_kill_effect: bool = false    # 처치 시 추가 턴 등
 
 # 특수 효과 목록 (Signal형으로 확장도 가능)
 @export var special_effects: Array[String] = []
-
 # 특수기 or 발동 조건이 있는 효과들은 별도로 조건 확인 필요
+
+func upgrade():
+	damage += damage_growth
+	multiplier += multiplier_growth
+	shield += shield_growth
+	break_chance += break_chance_growth
+	repeat_bonus += repeat_bonus_growth
+	break_mult += break_mult_growth
+	resonance_bonus += repeat_bonus_growth

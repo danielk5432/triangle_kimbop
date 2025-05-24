@@ -90,7 +90,7 @@ func handle_movement(_move_to: Vector2, is_global: bool = false, _duration: floa
 		move_tween.tween_property(self, "position", _move_to, _duration)
 
 func handle_movement_r(_move_to: Vector2, is_global: bool = false, _duration: float = 0.1):
-	card_activated
+	card_activated = false
 	if move_tween:
 		move_tween.kill()
 	move_tween = create_tween()
