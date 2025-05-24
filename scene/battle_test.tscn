@@ -12,14 +12,16 @@ script = ExtResource("1_ka80r")
 position = Vector2(640, 426)
 texture = ExtResource("2_ka80r")
 
-[node name="CardHolder" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Button" type="TextureButton" parent="CardHolder"]
-offset_left = 1073.0
-offset_top = 435.0
-offset_right = 1273.0
-offset_bottom = 585.0
+[node name="Button" type="TextureButton" parent="UI"]
+offset_left = 1076.0
+offset_top = 511.0
+offset_right = 1276.0
+offset_bottom = 661.0
 texture_normal = ExtResource("3_sib02")
 texture_pressed = ExtResource("4_hyxxc")
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[connection signal="pressed" from="UI/Button" to="." method="_on_button_pressed"]

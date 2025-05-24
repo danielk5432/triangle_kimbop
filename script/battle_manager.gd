@@ -19,6 +19,7 @@ var deck : Array
 var hand_data : Array[CardData]
 var hand_card : Array[BaseCard]
 var selected_cards : Array[BaseCard]
+var card_idx : int = 0
 
 func _ready():
 	change_state(BattleState.SETUP)
@@ -50,9 +51,11 @@ func change_state(new_state: BattleState):
 			pass
 
 		BattleState.CARD:
-			#activate_selected_cards()
-			pass
-	
+			
+			if len(selected_cards) <= card_idx:
+				change_state(BattleState.ENEMY)
+				
+			change_state(BattleState.BREAK)
 		BattleState.BREAK:
 			#resolve_card_destruction()
 			pass
@@ -83,7 +86,7 @@ func layout_hand_cards():
 		var target_pos = Vector2(start_x + i * spacing, y)
 		var new_card = Global.make_card(card_data)
 		new_card.card_data = card_data
-		$CardHolder.add_child(new_card)
+		$UI.add_child(new_card)
 		new_card.set_card_position(target_pos)
 		hand_card.append(new_card)
 
@@ -100,3 +103,7 @@ func _card_deselected(sel_card : BaseCard):
 	for i in range(len(selected_cards)):
 		selected_cards[i].set_index(i+1)
 	
+func _on_button_pressed():
+	#check if hand is not empty
+	if current_state == BattleState.SELECT:
+		change_state(BattleState.CARD)
