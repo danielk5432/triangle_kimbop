@@ -21,31 +21,38 @@ func _ready():
 
 
 func on_button_down() -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		# 드래그 시작
-		dragging = true
-		dragging_offset = get_global_mouse_position() - global_position
+	if Global.selectable:
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			# 드래그 시작
+			dragging = true
+			dragging_offset = get_global_mouse_position() - global_position
 
-	elif Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
-		card_activated = !card_activated
+		elif Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+			card_activated = !card_activated
 
-		var target_pos: Vector2
-		if card_activated:
-			target_pos = initial_position + move_pos
-			card_selected.emit()
-			$Index.visible = true
-			animate_scale(Vector2(1.2, 1.2))
-			z_index = selected_level
-			
-		else:
-			target_pos = initial_position
-			card_deselected.emit()
-			$Index.visible = false
-			animate_scale(Vector2(1, 1))
-			z_index = unselected_level
+			var target_pos: Vector2
+			if card_activated:
+				target_pos = initial_position + move_pos
+				card_selected.emit()
+				$Index.visible = true
+				animate_scale(Vector2(1.2, 1.2))
+				z_index = selected_level
+				
+			else:
+				target_pos = initial_position
+				card_deselected.emit()
+				$Index.visible = false
+				animate_scale(Vector2(1, 1))
+				z_index = unselected_level
 
-		handle_movement(target_pos, true, move_time)
+			handle_movement(target_pos, true, move_time)
 
+func deselect():
+	var target_pos = initial_position
+	$Index.visible = false
+	animate_scale(Vector2(1, 1))
+	z_index = unselected_level
+	handle_movement(target_pos, true, move_time)
 
 
 func on_button_up() -> void:

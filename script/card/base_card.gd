@@ -25,3 +25,6 @@ func _card_selected():
 
 func _card_deselected():
 	card_deselected.emit(self)
+
+func select_reset():
+	$Card.deselect()
