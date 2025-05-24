@@ -19,7 +19,7 @@ func _ready():
 func _process(delta):
 	$AnimatedSprite2D.play()
 
-	if Input.is_action_just_pressed("Excape"):
+	if Input.is_action_just_pressed("Escape"):
 		viewing = not viewing  # 토글: 보기 시작/종료
 
 	if viewing:
