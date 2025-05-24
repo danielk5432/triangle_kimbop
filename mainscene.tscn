@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dp2tm62txdvkd"]
+[gd_scene load_steps=55 format=3 uid="uid://dp2tm62txdvkd"]
 
 [ext_resource type="Script" uid="uid://dglmv4di3ufjj" path="res://mainscene.gd" id="1_5lfti"]
 [ext_resource type="Texture2D" uid="uid://cajldpa0kon5u" path="res://image/backgroun_asset/Nature Landscapes Free Pixel Art/nature_4/1.png" id="2_ewkxy"]
@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://c2tlvp48hpetb" path="res://image/main_character/2.png" id="3_76yo1"]
 [ext_resource type="Texture2D" uid="uid://bn0ccqobu1hu5" path="res://image/backgroun_asset/Nature Landscapes Free Pixel Art/nature_4/2.png" id="3_dgcol"]
 [ext_resource type="Texture2D" uid="uid://p2qsvgewle5" path="res://image/main_character/3.png" id="4_8bn17"]
-[ext_resource type="Script" path="res://grass.gd" id="4_dgcol"]
-[ext_resource type="Script" path="res://cloud_2.gd" id="4_iwfn6"]
+[ext_resource type="Script" uid="uid://cpjmewjt4177c" path="res://grass.gd" id="4_dgcol"]
+[ext_resource type="Script" uid="uid://cyjv8i4cr8oox" path="res://cloud_2.gd" id="4_iwfn6"]
 [ext_resource type="Script" uid="uid://8u8hhswwe3vi" path="res://animated_sprite_2d.gd" id="4_sbvtr"]
 [ext_resource type="Texture2D" uid="uid://dq480xtl28duq" path="res://image/main_character/4.png" id="5_1ftms"]
 [ext_resource type="Texture2D" uid="uid://yeqgm11d8b41" path="res://image/monster/fox1.png" id="7_0lhry"]
@@ -21,27 +21,29 @@
 [ext_resource type="Texture2D" uid="uid://c8cftdv6txbtv" path="res://image/monster/fire1.png" id="12_5sl4u"]
 [ext_resource type="Texture2D" uid="uid://btshlqkt7u78o" path="res://image/monster/fire2.png" id="13_sm3u2"]
 [ext_resource type="Texture2D" uid="uid://cou6cnlwc5v6b" path="res://image/monster/fire3.png" id="14_xf0pi"]
-[ext_resource type="Script" path="res://fire.gd" id="15_1cnxy"]
+[ext_resource type="Script" uid="uid://l3o2ma2yr2x" path="res://fire.gd" id="15_1cnxy"]
 [ext_resource type="Texture2D" uid="uid://c4p32dnq71m2r" path="res://image/monster/tiger1.png" id="17_w2c5i"]
 [ext_resource type="Texture2D" uid="uid://bnjirqayb6nvy" path="res://image/monster/tiger2.png" id="18_312mw"]
-[ext_resource type="Script" path="res://fox.gd" id="18_xs15d"]
+[ext_resource type="Script" uid="uid://bi1pwqtue6hfq" path="res://fox.gd" id="18_xs15d"]
 [ext_resource type="Texture2D" uid="uid://caqdhtyyyqlsk" path="res://image/monster/ghost1.png" id="19_w2c5i"]
 [ext_resource type="Texture2D" uid="uid://cfd8rhtq7cbt2" path="res://image/monster/ghost2.png" id="20_312mw"]
 [ext_resource type="Texture2D" uid="uid://bdjscp5prfuxa" path="res://image/monster/dragon1.png" id="21_qvxvv"]
 [ext_resource type="Texture2D" uid="uid://coi3qk2qg7yfm" path="res://image/monster/dragon2.png" id="22_28t8q"]
-[ext_resource type="Script" path="res://tiger.gd" id="23_7b6ne"]
+[ext_resource type="Script" uid="uid://dad5m135kkmd1" path="res://tiger.gd" id="23_7b6ne"]
 [ext_resource type="Texture2D" uid="uid://cru0fml2iddbd" path="res://image/monster/cloud0.png" id="23_r7qwr"]
-[ext_resource type="Script" path="res://babyfox.gd" id="24_4olqe"]
+[ext_resource type="Script" uid="uid://c2ebw0pgrbgad" path="res://babyfox.gd" id="24_4olqe"]
 [ext_resource type="Texture2D" uid="uid://d2kcbkj6augb1" path="res://image/monster/cloud1.png" id="24_jbpqh"]
 [ext_resource type="Texture2D" uid="uid://ujqgn8oaij3u" path="res://image/ect/tomb.png" id="25_qvxvv"]
 [ext_resource type="Texture2D" uid="uid://bfn08j71108um" path="res://image/ect/shop.png" id="26_28t8q"]
 [ext_resource type="Texture2D" uid="uid://b1lhf5hiy1ghe" path="res://image/ect/button1.png" id="27_28t8q"]
-[ext_resource type="Script" path="res://ghost.gd" id="30_03120"]
-[ext_resource type="Script" path="res://bg_2.gd" id="30_dgcol"]
+[ext_resource type="Script" uid="uid://6g0desv6eh56" path="res://ghost.gd" id="30_03120"]
+[ext_resource type="Script" uid="uid://n6rg5hlm2n3f" path="res://bg_2.gd" id="30_dgcol"]
 [ext_resource type="Texture2D" uid="uid://ccrrpx5l0rwi0" path="res://image/backgroun_asset/Nature Landscapes Free Pixel Art/nature_4/4.png" id="30_xkysf"]
 [ext_resource type="Texture2D" uid="uid://cf4jsv7jnmxv" path="res://image/ect/button.png" id="33_5of3b"]
-[ext_resource type="Script" path="res://dragon.gd" id="33_56ibc"]
-[ext_resource type="Script" path="res://cloud.gd" id="36_pgq4v"]
+[ext_resource type="Script" uid="uid://ce23wnem5qjb8" path="res://dragon.gd" id="33_56ibc"]
+[ext_resource type="Script" uid="uid://fikfrahjk8dn" path="res://cloud.gd" id="36_pgq4v"]
+[ext_resource type="Texture2D" uid="uid://clc8sqndh1n4l" path="res://resource/attack_off.png" id="43_4olqe"]
+[ext_resource type="Texture2D" uid="uid://bw4wlnk7fojdg" path="res://resource/attack_on.png" id="44_03120"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5lfti"]
 animations = [{
@@ -223,8 +225,8 @@ position = Vector2(1887, -37)
 scale = Vector2(2.323, 1.883)
 
 [node name="sky" type="Sprite2D" parent="BG1"]
-position = Vector2(-608.48, 1.19492)
-scale = Vector2(0.867682, 1.06787)
+position = Vector2(-580.715, 20.7116)
+scale = Vector2(0.956617, 1.18015)
 texture = ExtResource("2_ewkxy")
 
 [node name="cloud2" type="Sprite2D" parent="BG1"]
@@ -234,27 +236,32 @@ texture = ExtResource("3_dgcol")
 script = ExtResource("4_iwfn6")
 
 [node name="grass" type="Node2D" parent="BG1"]
-position = Vector2(-608.48, 1.19492)
+position = Vector2(-1137.36, 0.945)
 scale = Vector2(0.867682, 1.06787)
 script = ExtResource("4_dgcol")
 
 [node name="grass1" type="Sprite2D" parent="BG1/grass"]
-position = Vector2(16.1241, -81.1864)
-scale = Vector2(1.06255, 1.30852)
+position = Vector2(18, -51.8)
+scale = Vector2(1.06255, 1.34003)
 texture = ExtResource("3_5au1j")
 
 [node name="grass2" type="Sprite2D" parent="BG1/grass"]
-position = Vector2(626.912, -81.6838)
-scale = Vector2(1.0627, 1.30843)
+position = Vector2(630, -51.8)
+scale = Vector2(1.063, 1.34)
 texture = ExtResource("3_5au1j")
 
-[node name="Main" type="AnimatedSprite2D" parent="."]
-position = Vector2(217, -40)
+[node name="grass3" type="Sprite2D" parent="BG1/grass"]
+position = Vector2(1242.11, -51.8)
+scale = Vector2(1.063, 1.34)
+texture = ExtResource("3_5au1j")
+
+[node name="Main_Hachi" type="AnimatedSprite2D" parent="."]
+position = Vector2(289, 18)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_5lfti")
 script = ExtResource("4_sbvtr")
 
-[node name="fire" type="AnimatedSprite2D" parent="Main"]
+[node name="fire" type="AnimatedSprite2D" parent="Main_Hachi"]
 visible = false
 position = Vector2(22, -220)
 sprite_frames = SubResource("SpriteFrames_jtreq")
@@ -275,7 +282,7 @@ frame_progress = 0.718047
 script = ExtResource("15_1cnxy")
 
 [node name="babyfox" type="AnimatedSprite2D" parent="."]
-position = Vector2(642, -61)
+position = Vector2(793, -4)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_lc52x")
 frame_progress = 0.369634
@@ -323,46 +330,16 @@ frame_progress = 0.0848814
 script = ExtResource("36_pgq4v")
 
 [node name="Tomb" type="Sprite2D" parent="."]
-position = Vector2(876, -293)
+position = Vector2(1006, -284)
 scale = Vector2(0.7375, 0.703039)
 texture = ExtResource("25_qvxvv")
 
 [node name="Shop" type="Sprite2D" parent="."]
-position = Vector2(945, -192)
+position = Vector2(1075, -183)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("26_28t8q")
 
-[node name="BG2" type="Node2D" parent="."]
-position = Vector2(549.875, -37)
-scale = Vector2(2.32335, 1.88272)
-script = ExtResource("30_dgcol")
-
-[node name="green1" type="Sprite2D" parent="BG2"]
-texture = ExtResource("30_xkysf")
-
-[node name="green2" type="Sprite2D" parent="BG2"]
-position = Vector2(575.516, 0)
-scale = Vector2(0.999849, 1.00015)
-texture = ExtResource("30_xkysf")
-
-[node name="Button" type="Button" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 808.0
-offset_top = 64.0
-offset_right = 1016.0
-offset_bottom = 222.0
-grow_horizontal = 2
-grow_vertical = 2
-action_mode = 0
-icon = ExtResource("33_5of3b")
-flat = true
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(981, 153)
 scale = Vector2(0.825, 0.853333)
 sprite_frames = SubResource("SpriteFrames_7b6ne")
@@ -370,4 +347,33 @@ animation = &"click"
 frame = 1
 frame_progress = 0.635033
 
-[connection signal="animation_finished" from="Main" to="Main" method="_on_animation_finished"]
+[node name="BG2" type="Node2D" parent="."]
+position = Vector2(-1152, 0)
+script = ExtResource("30_dgcol")
+
+[node name="4" type="Sprite2D" parent="BG2"]
+position = Vector2(474, 38)
+scale = Vector2(2, 2)
+texture = ExtResource("30_xkysf")
+
+[node name="5" type="Sprite2D" parent="BG2"]
+position = Vector2(1626, 38)
+scale = Vector2(2, 2)
+texture = ExtResource("30_xkysf")
+
+[node name="6" type="Sprite2D" parent="BG2"]
+position = Vector2(2778, 38)
+scale = Vector2(2, 2)
+texture = ExtResource("30_xkysf")
+
+[node name="Button" type="TextureButton" parent="."]
+offset_left = 1006.0
+offset_top = 89.0
+offset_right = 1206.0
+offset_bottom = 239.0
+texture_normal = ExtResource("43_4olqe")
+texture_pressed = ExtResource("44_03120")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="animation_finished" from="Main_Hachi" to="Main_Hachi" method="_on_animation_finished"]
+[connection signal="pressed" from="Button" to="Main_Hachi" method="_on_button_pressed"]
