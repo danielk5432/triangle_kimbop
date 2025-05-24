@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 [gd_scene load_steps=53 format=3 uid="uid://b8guqlvjt3tjj"]
+=======
+
+[gd_scene load_steps=40 format=3 uid="uid://b8guqlvjt3tjj"]
+>>>>>>> 229a00f9853aac6d3bb2d02d5787ec62fc575b7c
 
 [ext_resource type="Script" uid="uid://dglmv4di3ufjj" path="res://mainscene.gd" id="1_5lfti"]
 [ext_resource type="Texture2D" uid="uid://cajldpa0kon5u" path="res://image/backgroun_asset/Nature Landscapes Free Pixel Art/nature_4/1.png" id="2_ewkxy"]
