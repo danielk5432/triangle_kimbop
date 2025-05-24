@@ -29,8 +29,6 @@ metadata/_custom_type_script = "uid://ctotyefntig4a"
 [node name="FireballCard" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-size_flags_horizontal = 4
-size_flags_vertical = 4
 script = ExtResource("1_4asd2")
 card_data = SubResource("Resource_u5064")
 

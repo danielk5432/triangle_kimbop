@@ -1,13 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://0abkycpxej81"]
+[gd_scene load_steps=5 format=3 uid="uid://0abkycpxej81"]
 
 [ext_resource type="Script" uid="uid://b1gqhyl5iapvq" path="res://script/battle_manager.gd" id="1_ka80r"]
-[ext_resource type="PackedScene" uid="uid://cndog1tx8q6fb" path="res://scene/card/fireball_card.tscn" id="2_ka80r"]
+[ext_resource type="Texture2D" uid="uid://boouxrscpgl48" path="res://resource/background.png" id="2_ka80r"]
+[ext_resource type="Texture2D" uid="uid://clc8sqndh1n4l" path="res://resource/attack_off.png" id="3_sib02"]
+[ext_resource type="Texture2D" uid="uid://bw4wlnk7fojdg" path="res://resource/attack_on.png" id="4_hyxxc"]
 
 [node name="BattleTest" type="Node2D"]
 script = ExtResource("1_ka80r")
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 426)
+texture = ExtResource("2_ka80r")
+
 [node name="CardHolder" type="CanvasLayer" parent="."]
 
-[node name="FireballCard" parent="CardHolder" instance=ExtResource("2_ka80r")]
+[node name="Button" type="TextureButton" parent="CardHolder"]
+offset_left = 1073.0
+offset_top = 435.0
+offset_right = 1273.0
+offset_bottom = 585.0
+texture_normal = ExtResource("3_sib02")
+texture_pressed = ExtResource("4_hyxxc")
 
 [node name="Node2D" type="Node2D" parent="."]

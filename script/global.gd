@@ -13,3 +13,11 @@ func get_deck() -> Array:
 		for i in range(5):
 			player_deck.append(fireball_instance.card_data.duplicate(true))
 	return player_deck
+
+func make_card(data : CardData) -> Control:
+	if !data:
+		return null
+	match data.name:
+		"fireball":
+			return preload("res://scene/card/fireball_card.tscn").instantiate()
+	return null

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3ulcnf3u8ynd"]
+[gd_scene load_steps=10 format=3 uid="uid://c3ulcnf3u8ynd"]
 
 [ext_resource type="Script" uid="uid://byj4cxpwxdhv2" path="res://script/card/card_custom.gd" id="1_7wvdc"]
 [ext_resource type="Texture2D" uid="uid://cmyq1anj4cbbr" path="res://icon.svg" id="2_xw1wj"]
@@ -19,6 +19,9 @@ metadata/_custom_type_script = "uid://6h70gh0ms0mh"
 [sub_resource type="LabelSettings" id="LabelSettings_62a2r"]
 font_size = 30
 
+[sub_resource type="LabelSettings" id="LabelSettings_w6npp"]
+font_size = 100
+
 [node name="Card" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
@@ -35,7 +38,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("5_w6npp")
 
-[node name="Label" type="Label" parent="."]
+[node name="DestoryPercent" type="Label" parent="."]
 offset_left = 150.0
 offset_top = 562.0
 offset_right = 444.0
@@ -43,4 +46,16 @@ offset_bottom = 611.0
 text = "0%"
 label_settings = SubResource("LabelSettings_62a2r")
 horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Index" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 203.0
+offset_top = -136.0
+offset_right = 260.0
+offset_bottom = 1.0
+text = "1"
+label_settings = SubResource("LabelSettings_w6npp")
+horizontal_alignment = 1
 vertical_alignment = 1
