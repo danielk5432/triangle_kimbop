@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://d2kcbkj6augb1" path="res://image/monster/cloud1.png" id="24_jbpqh"]
 [ext_resource type="Texture2D" uid="uid://ujqgn8oaij3u" path="res://image/ect/tomb.png" id="25_qvxvv"]
 [ext_resource type="Texture2D" uid="uid://bfn08j71108um" path="res://image/ect/shop.png" id="26_28t8q"]
+
 [ext_resource type="Script" uid="uid://6g0desv6eh56" path="res://ghost.gd" id="30_03120"]
 [ext_resource type="Script" uid="uid://n6rg5hlm2n3f" path="res://bg_2.gd" id="30_dgcol"]
 [ext_resource type="Texture2D" uid="uid://ccrrpx5l0rwi0" path="res://image/backgroun_asset/Nature Landscapes Free Pixel Art/nature_4/4.png" id="30_xkysf"]
@@ -41,6 +42,7 @@
 [ext_resource type="Script" uid="uid://d10gbuvloars3" path="res://cloud.gd" id="36_pgq4v"]
 [ext_resource type="Texture2D" uid="uid://clc8sqndh1n4l" path="res://resource/attack_off.png" id="43_4olqe"]
 [ext_resource type="Texture2D" uid="uid://bw4wlnk7fojdg" path="res://resource/attack_on.png" id="44_03120"]
+
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5lfti"]
 animations = [{
