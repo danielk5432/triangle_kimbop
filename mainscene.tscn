@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bn0ccqobu1hu5" path="res://image/backgroun_asset/Nature Landscapes Free Pixel Art/nature_4/2.png" id="3_dgcol"]
 [ext_resource type="Texture2D" uid="uid://p2qsvgewle5" path="res://image/main_character/3.png" id="4_8bn17"]
 [ext_resource type="Script" uid="uid://cpjmewjt4177c" path="res://grass.gd" id="4_dgcol"]
-[ext_resource type="Script" uid="uid://cyjv8i4cr8oox" path="res://cloud_2.gd" id="4_iwfn6"]
 [ext_resource type="Script" uid="uid://8u8hhswwe3vi" path="res://animated_sprite_2d.gd" id="4_sbvtr"]
 [ext_resource type="Texture2D" uid="uid://dq480xtl28duq" path="res://image/main_character/4.png" id="5_1ftms"]
 [ext_resource type="Texture2D" uid="uid://yeqgm11d8b41" path="res://image/monster/fox1.png" id="7_0lhry"]
@@ -41,7 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://ccrrpx5l0rwi0" path="res://image/backgroun_asset/Nature Landscapes Free Pixel Art/nature_4/4.png" id="30_xkysf"]
 [ext_resource type="Texture2D" uid="uid://cf4jsv7jnmxv" path="res://image/ect/button.png" id="33_5of3b"]
 [ext_resource type="Script" uid="uid://ce23wnem5qjb8" path="res://dragon.gd" id="33_56ibc"]
-[ext_resource type="Script" uid="uid://fikfrahjk8dn" path="res://cloud.gd" id="36_pgq4v"]
+[ext_resource type="Script" uid="uid://d10gbuvloars3" path="res://cloud.gd" id="36_pgq4v"]
 [ext_resource type="Texture2D" uid="uid://clc8sqndh1n4l" path="res://resource/attack_off.png" id="43_4olqe"]
 [ext_resource type="Texture2D" uid="uid://bw4wlnk7fojdg" path="res://resource/attack_on.png" id="44_03120"]
 
@@ -191,6 +190,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_xs15d"]
+script/source = "extends AnimatedSprite2D
+
+func _process(delta: float) -> void:
+	play(\"default\")
+"
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7b6ne"]
 animations = [{
 "frames": [{
@@ -225,20 +231,46 @@ position = Vector2(1887, -37)
 scale = Vector2(2.323, 1.883)
 
 [node name="sky" type="Sprite2D" parent="BG1"]
-position = Vector2(-580.715, 20.7116)
+position = Vector2(-580.715, 20.7117)
 scale = Vector2(0.956617, 1.18015)
 texture = ExtResource("2_ewkxy")
 
-[node name="cloud2" type="Sprite2D" parent="BG1"]
-position = Vector2(-593.198, -61.6038)
-scale = Vector2(0.908787, 1.1318)
+[node name="cloud" type="Node2D" parent="BG1"]
+position = Vector2(0, -29.794)
+script = ExtResource("36_pgq4v")
+speed = 0.5
+reset_threshold = -3000.0
+
+[node name="cloud3" type="Sprite2D" parent="BG1/cloud"]
+position = Vector2(988.757, -18.056)
+scale = Vector2(1.22435, 1.30613)
 texture = ExtResource("3_dgcol")
-script = ExtResource("4_iwfn6")
+
+[node name="cloud2" type="Sprite2D" parent="BG1/cloud"]
+position = Vector2(-575.979, -59.8117)
+scale = Vector2(0.956616, 1.14286)
+texture = ExtResource("3_dgcol")
+
+[node name="cloud5" type="Sprite2D" parent="BG1/cloud"]
+position = Vector2(102.884, -2.65505)
+scale = Vector2(0.915115, 1.30613)
+texture = ExtResource("3_dgcol")
+
+[node name="cloud4" type="Sprite2D" parent="BG1/cloud"]
+position = Vector2(0, 36.1129)
+scale = Vector2(0.915115, 1.30613)
+texture = ExtResource("3_dgcol")
+
+[node name="cloud7" type="Sprite2D" parent="BG1/cloud"]
+position = Vector2(1800, -59.812)
+scale = Vector2(0.956616, 1.14286)
+texture = ExtResource("3_dgcol")
 
 [node name="grass" type="Node2D" parent="BG1"]
 position = Vector2(-1137.36, 0.945)
 scale = Vector2(0.867682, 1.06787)
 script = ExtResource("4_dgcol")
+speed = 1.0
 
 [node name="grass1" type="Sprite2D" parent="BG1/grass"]
 position = Vector2(18, -51.8)
@@ -327,7 +359,7 @@ position = Vector2(959, -461)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_xkysf")
 frame_progress = 0.0848814
-script = ExtResource("36_pgq4v")
+script = SubResource("GDScript_xs15d")
 
 [node name="Tomb" type="Sprite2D" parent="."]
 position = Vector2(1006, -284)
@@ -350,6 +382,7 @@ frame_progress = 0.635033
 [node name="BG2" type="Node2D" parent="."]
 position = Vector2(-1152, 0)
 script = ExtResource("30_dgcol")
+speed = 10.0
 
 [node name="4" type="Sprite2D" parent="BG2"]
 position = Vector2(474, 38)
