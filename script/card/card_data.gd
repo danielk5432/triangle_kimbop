@@ -4,6 +4,7 @@ extends Resource
 @export var name: String
 @export var description: String
 @export var icon: Texture2D
+@export var id: int = 0
 
 # 기본 정보
 @export var damage: float = 0.0

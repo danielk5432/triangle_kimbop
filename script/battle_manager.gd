@@ -51,7 +51,6 @@ func change_state(new_state: BattleState):
 			Global.selectable = true
 
 		BattleState.CARD:
-			Global.selectable = false
 			print(hand_cards)
 			print(selected_cards)
 			if len(selected_cards) <= card_idx:
@@ -76,12 +75,11 @@ func draw_n_cards(n : int):
 			hand_data.append(deck.pop_back())
 
 func make_hand_cards():
-	var spacing = 350  # 카드 간 간격
-	var y = 2000        # 화면 아래쪽 위치 (필요시 조정)
-	var x = 1900
+	var spacing = 350/4  # 카드 간 간격
+	var y = 2000/4        # 화면 아래쪽 위치 (필요시 조정)
 	var screen_width = get_viewport_rect().size.x
 	var total_width = hand_data.size() * spacing
-	var start_x = (screen_width - total_width) / 2.0 + x
+	var start_x = (screen_width - total_width) / 2.0
 
 	for i in range(hand_data.size()):
 		var card_data = hand_data[i]
@@ -91,12 +89,13 @@ func make_hand_cards():
 		$UI.add_child(new_card)
 		new_card.set_card_position(target_pos)
 		hand_cards.append(new_card)
+	print(hand_cards)
 
-func arrange_cards(cards : Array, y : int = 2000, spacing : int = 350):
-	var x = 1900
+func arrange_cards(cards : Array, y : int = 500, spacing : int = 350/4):
 	var screen_width = get_viewport_rect().size.x
 	var total_width = cards.size() * spacing
-	var start_x = (screen_width - total_width) / 2.0 + x
+	var start_x = (screen_width - total_width) / 2.0 
+	print(cards.size())
 	for i in range(cards.size()):
 		var target_pos = Vector2(start_x + i * spacing, y)
 		var new_card = cards[i]
@@ -119,19 +118,20 @@ func _on_button_pressed():
 	#check if hand is not empty
 	if current_state == BattleState.SELECT:
 		del_selected_in_hand()
-		arrange_cards(hand_cards)
-		arrange_cards(selected_cards, 1300)
-	
+		arrange_cards(hand_cards, 500)
+		arrange_cards(selected_cards, 1300/4, 350/2)
 		change_state(BattleState.CARD)
 
 func del_selected_in_hand():
 	var del_cards = []
-	for i in range(len(hand_cards)):
-		var idx = selected_cards.find(hand_cards[i])
-		hand_cards[i].select_reset()
-		if idx != -1:
-			del_cards.append(idx)
-	del_cards.sort()
-	del_cards.reverse()
-	for i in del_cards:
-		hand_cards.pop_at(i)
+	var length = hand_cards.size()
+	for i in range(length):
+		var curr_card = hand_cards[length - i - 1]
+		print("id", curr_card.card_data.id)
+		for del_card in selected_cards:
+			if curr_card.card_data.id == del_card.card_data.id:
+				print(del_card, length - i - 1)
+				hand_cards.pop_at(length - i - 1)
+		
+		
+	Global.selectable = false

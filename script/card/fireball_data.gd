@@ -3,6 +3,7 @@ extends CardData
 
 func _init():
 	name = "fireball"
+	id = Global.get_card_id()
 	icon = load("res://resource/fireball_card.png")
 	damage = 3.0
 	damage_growth = 2.0
