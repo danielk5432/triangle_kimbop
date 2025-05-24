@@ -39,6 +39,7 @@ offset_bottom = 40.0
 texture = ExtResource("5_w6npp")
 
 [node name="DestoryPercent" type="Label" parent="."]
+layout_mode = 0
 offset_left = 150.0
 offset_top = 562.0
 offset_right = 444.0
