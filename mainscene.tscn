@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dp2tm62txdvkd"]
+[gd_scene load_steps=52 format=3 uid="uid://dp2tm62txdvkd"]
 
 [ext_resource type="Script" uid="uid://dglmv4di3ufjj" path="res://mainscene.gd" id="1_5lfti"]
 [ext_resource type="Texture2D" uid="uid://cajldpa0kon5u" path="res://image/backgroun_asset/Nature Landscapes Free Pixel Art/nature_4/1.png" id="2_ewkxy"]
@@ -34,11 +34,9 @@
 [ext_resource type="Texture2D" uid="uid://d2kcbkj6augb1" path="res://image/monster/cloud1.png" id="24_jbpqh"]
 [ext_resource type="Texture2D" uid="uid://ujqgn8oaij3u" path="res://image/ect/tomb.png" id="25_qvxvv"]
 [ext_resource type="Texture2D" uid="uid://bfn08j71108um" path="res://image/ect/shop.png" id="26_28t8q"]
-[ext_resource type="Texture2D" uid="uid://b1lhf5hiy1ghe" path="res://image/ect/button1.png" id="27_28t8q"]
 [ext_resource type="Script" uid="uid://6g0desv6eh56" path="res://ghost.gd" id="30_03120"]
 [ext_resource type="Script" uid="uid://n6rg5hlm2n3f" path="res://bg_2.gd" id="30_dgcol"]
 [ext_resource type="Texture2D" uid="uid://ccrrpx5l0rwi0" path="res://image/backgroun_asset/Nature Landscapes Free Pixel Art/nature_4/4.png" id="30_xkysf"]
-[ext_resource type="Texture2D" uid="uid://cf4jsv7jnmxv" path="res://image/ect/button.png" id="33_5of3b"]
 [ext_resource type="Script" uid="uid://ce23wnem5qjb8" path="res://dragon.gd" id="33_56ibc"]
 [ext_resource type="Script" uid="uid://d10gbuvloars3" path="res://cloud.gd" id="36_pgq4v"]
 [ext_resource type="Texture2D" uid="uid://clc8sqndh1n4l" path="res://resource/attack_off.png" id="43_4olqe"]
@@ -197,31 +195,6 @@ func _process(delta: float) -> void:
 	play(\"default\")
 "
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7b6ne"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("33_5of3b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_28t8q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_5of3b")
-}],
-"loop": true,
-"name": &"click",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("33_5of3b")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="Player" type="Area2D"]
 position = Vector2(102, 358)
 script = ExtResource("1_5lfti")
@@ -370,14 +343,6 @@ texture = ExtResource("25_qvxvv")
 position = Vector2(1075, -183)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("26_28t8q")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(981, 153)
-scale = Vector2(0.825, 0.853333)
-sprite_frames = SubResource("SpriteFrames_7b6ne")
-animation = &"click"
-frame = 1
-frame_progress = 0.635033
 
 [node name="BG2" type="Node2D" parent="."]
 position = Vector2(-1152, 0)
