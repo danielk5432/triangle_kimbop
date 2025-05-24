@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://0abkycpxej81"]
+[gd_scene load_steps=3 format=3 uid="uid://0abkycpxej81"]
+
+[ext_resource type="Script" uid="uid://b1gqhyl5iapvq" path="res://script/battle_manager.gd" id="1_ka80r"]
+[ext_resource type="PackedScene" uid="uid://cndog1tx8q6fb" path="res://scene/card/fireball_card.tscn" id="2_ka80r"]
 
 [node name="BattleTest" type="Node2D"]
+script = ExtResource("1_ka80r")
+
+[node name="CardHolder" type="CanvasLayer" parent="."]
+
+[node name="FireballCard" parent="CardHolder" instance=ExtResource("2_ka80r")]
+
+[node name="Node2D" type="Node2D" parent="."]

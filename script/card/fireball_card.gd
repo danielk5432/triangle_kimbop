@@ -1,0 +1,2 @@
+class_name FireballCard
+extends BaseCard

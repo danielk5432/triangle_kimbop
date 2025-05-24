@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cndog1tx8q6fb"]
+
+[ext_resource type="Script" uid="uid://dlv6gmvb6sut6" path="res://script/card/fireball_card.gd" id="1_4asd2"]
+[ext_resource type="PackedScene" uid="uid://c3ulcnf3u8ynd" path="res://scene/card/base_card.tscn" id="2_4jrt7"]
+[ext_resource type="Texture2D" uid="uid://c08s50122g4m2" path="res://resource/fireball_card.png" id="2_u5064"]
+[ext_resource type="Script" uid="uid://ctotyefntig4a" path="res://script/card/card_data.gd" id="3_4ayxf"]
+
+[sub_resource type="Resource" id="Resource_u5064"]
+script = ExtResource("3_4ayxf")
+name = "fireball"
+description = ""
+icon = ExtResource("2_u5064")
+damage = 0.0
+damage_growth = 0.0
+multiplier = 1.0
+multiplier_growth = 1.0
+shield = 0
+shield_growth = 0
+break_chance = 0.1
+break_chance_growth = 0.0
+card_type = "Basic"
+symbol = "+"
+repeat_bonus = 0.0
+resonance_bonus = 0.0
+on_kill_effect = false
+special_effects = Array[String]([])
+metadata/_custom_type_script = "uid://ctotyefntig4a"
+
+[node name="FireballCard" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_4asd2")
+card_data = SubResource("Resource_u5064")
+
+[node name="Card" parent="." instance=ExtResource("2_4jrt7")]
+layout_mode = 0
